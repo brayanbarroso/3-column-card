@@ -81,20 +81,56 @@ body {
     }
   }
 
-  button {
-    background-color: var(--Transparent-white);
+  @mixin button($color: white) {
+    background-color: var(--Very-light-gray);
     border: none;
-    border-radius: 50px;
-    margin-block-end: 20px;
-    padding-block: 20px;
+    border-radius: 35px;
+    box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.2);
+    color: $color;
+    font: {
+      family: $font-paragrant;
+      size: 15px;
+      weight: 400;
+    }
+    margin-block-end: 40px;
+    padding-block: 24px;
     padding-inline: 40px;
+  }
+
+  button:hover {
+    background-color: var(--Transparent-white);
+    cursor: pointer;
+  }
+
+  .btn-orange {
+    @include button($color: var(--Bright-orange));
+  }
+
+  .btn-cyan {
+    @include button($color: var(--Dark-cyan));
+  }
+
+  .btn-dark-cyan {
+    @include button($color: var(--Very-dark-cyan));
   }
 }
 
 .attribution {
-  font-size: 11px;
+  font: {
+    family: $font-paragrant;
+    size: 12px;
+    weigth: 400;
+  }
+  font-size: 12px;
+  margin: {
+    block-start: 25px;
+    block-end: 25px;
+  }
   text-align: center;
   a {
     color: hsl(228, 45%, 44%);
+    &hover {
+      color: hsla(228, 45%, 44%, 0.459);
+    }
   }
 }
