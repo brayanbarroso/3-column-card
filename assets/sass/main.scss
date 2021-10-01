@@ -19,14 +19,17 @@ $font-paragrant: "Lexend Deca", sans-serif;
 
 body {
   background-color: var(--Very-light-gray);
+  box-sizing: border-box;
   font: {
     size: 15px;
   }
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
   inline-size: 328px;
-  margin: 0 auto;
+  margin: auto;
   margin-block-start: 60px;
 }
 
@@ -85,6 +88,7 @@ body {
     background-color: var(--Very-light-gray);
     border: none;
     border-radius: 35px;
+    box-sizing: border-box;
     box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.2);
     color: $color;
     font: {
@@ -93,25 +97,41 @@ body {
       weight: 400;
     }
     margin-block-end: 40px;
-    padding-block: 24px;
+    padding-block: 20px;
     padding-inline: 40px;
-  }
-
-  button:hover {
-    background-color: var(--Transparent-white);
-    cursor: pointer;
   }
 
   .btn-orange {
     @include button($color: var(--Bright-orange));
   }
 
+  .btn-orange:hover {
+    background-color: var(--Bright-orange);
+    border: 1px solid var(--Very-light-gray);
+    color: var(--Very-light-gray);
+    cursor: pointer;
+  }
+
   .btn-cyan {
     @include button($color: var(--Dark-cyan));
   }
 
+  .btn-cyan:hover {
+    background-color: var(--Dark-cyan);
+    border: 1px solid var(--Very-light-gray);
+    color: var(--Very-light-gray);
+    cursor: pointer;
+  }
+
   .btn-dark-cyan {
     @include button($color: var(--Very-dark-cyan));
+  }
+
+  .btn-dark-cyan:hover {
+    background-color: var(--Very-dark-cyan);
+    border: 1px solid var(--Very-light-gray);
+    color: var(--Very-light-gray);
+    cursor: pointer;
   }
 }
 
@@ -131,6 +151,37 @@ body {
     color: hsl(228, 45%, 44%);
     &hover {
       color: hsla(228, 45%, 44%, 0.459);
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    flex-direction: row;
+    inline-size: 918px;
+    margin-block-start: 80px;
+  }
+
+  .card {
+    inline-size: 306px;
+    .card-orange {
+      border: {
+        top-left-radius: 8px;
+        bottom-left-radius: 8px;
+        top-right-radius: 0;
+      }
+    }
+
+    .card-dark-cyan {
+      border: {
+        top-right-radius: 8px;
+        bottom-right-radius: 8px;
+        bottom-left-radius: 0;
+      }
+    }
+
+    .card-wrapper {
+      inline-size: 210px;
     }
   }
 }
