@@ -99,6 +99,7 @@ body {
     margin-block-end: 40px;
     padding-block: 20px;
     padding-inline: 40px;
+    transition: 0.5s all ease-in-out;
   }
 
   .btn-orange {
@@ -139,7 +140,7 @@ body {
   font: {
     family: $font-paragrant;
     size: 12px;
-    weigth: 400;
+    weight: 400;
   }
   font-size: 12px;
   margin: {
